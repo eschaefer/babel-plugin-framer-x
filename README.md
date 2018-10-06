@@ -5,6 +5,20 @@ This plugin lets you directly use a Framer X components in a larger React applic
 - All imported values from `framer`;
 - All `propertyControls` class properties.
 
+```javascript
+// Removes this
+import { PropertyControls, ControlType } from "framer";
+
+// Removes this
+const { PropertyControls, ControlType } = require("framer");
+
+// Removes this
+static propertyControls: PropertyControls = {
+    text: { type: ControlType.String, title: "Text" },
+    color: { type: ControlType.Color, title: "Background Color" }
+}
+```
+
 ## Quick start
 
 Install the plugin first:
