@@ -21,6 +21,15 @@ module.exports = function({ types: t }) {
         if (path.node.key.name === 'propertyControls') {
           path.remove();
         }
+      },
+      // Maybe propertyControls was directly assigned
+      Identifier(path) {
+        if (path.node.name === 'propertyControls') {
+          var assignmentEx = path.findParent(
+            el => el.node.type === 'AssignmentExpression'
+          );
+          if (assignmentEx) assignmentEx.remove();
+        }
       }
     }
   };

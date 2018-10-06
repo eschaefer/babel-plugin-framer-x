@@ -22,36 +22,37 @@ const example2 = `
 import React from "react";
 import { PropertyControls, ControlType } from "framer";
 
-export class Example extends React.Component {
-  static defaultProps = { text: "Hello World!" };
-
-  static propertyControls: PropertyControls = {
-    text: { type: ControlType.String, title: "Text" }
-  };
-
+class Example extends React.Component {
   render() {
     return React.createElement("div", null, this.props.text);
   }
 }
+
+Example.propertyControls = {
+  text: { type: ControlType.String, title: "Text" }
+};
+Example.defaultProps = { text: "Hello World!" };
+
+export default Example;
 `;
 
 const plugins = [
-	plugin,
-	'@babel/plugin-syntax-flow',
-	'@babel/plugin-syntax-typescript',
-	'@babel/plugin-syntax-class-properties'
+  plugin,
+  '@babel/plugin-syntax-flow',
+  '@babel/plugin-syntax-typescript',
+  '@babel/plugin-syntax-class-properties'
 ];
 
 it('works on imports', () => {
-	const { code } = babel.transform(example1, {
-		plugins
-	});
-	expect(code).toMatchSnapshot();
+  const { code } = babel.transform(example1, {
+    plugins
+  });
+  expect(code).toMatchSnapshot();
 });
 
 it('works on requires', () => {
-	const { code } = babel.transform(example2, {
-		plugins
-	});
-	expect(code).toMatchSnapshot();
+  const { code } = babel.transform(example2, {
+    plugins
+  });
+  expect(code).toMatchSnapshot();
 });

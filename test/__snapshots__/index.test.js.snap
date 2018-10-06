@@ -17,14 +17,16 @@ export class Example extends React.Component {
 
 exports[`works on requires 1`] = `
 "import React from \\"react\\";
-export class Example extends React.Component {
-  static defaultProps = {
-    text: \\"Hello World!\\"
-  };
 
+class Example extends React.Component {
   render() {
     return React.createElement(\\"div\\", null, this.props.text);
   }
 
-}"
+}
+
+Example.defaultProps = {
+  text: \\"Hello World!\\"
+};
+export default Example;"
 `;

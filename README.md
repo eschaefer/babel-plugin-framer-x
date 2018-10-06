@@ -14,9 +14,15 @@ const { PropertyControls, ControlType } = require("framer");
 
 // Removes this
 static propertyControls: PropertyControls = {
-    text: { type: ControlType.String, title: "Text" },
-    color: { type: ControlType.Color, title: "Background Color" }
+  text: { type: ControlType.String, title: "Text" },
+  color: { type: ControlType.Color, title: "Background Color" }
 }
+
+// Removes this
+ComponentName.propertyControls = {
+  text: { type: ControlType.String, title: "Text" },
+  color: { type: ControlType.Color, title: "Background Color" }
+};
 ```
 
 ## Quick start
