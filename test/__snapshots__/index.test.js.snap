@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`works on imports 1`] = `
+"const React = require(\\"react\\");
+
+export class Example extends React.Component {
+  static defaultProps = {
+    text: \\"Hello World!\\"
+  };
+
+  render() {
+    return React.createElement(\\"div\\", null, this.props.text);
+  }
+
+}"
+`;
+
+exports[`works on requires 1`] = `
+"import React from \\"react\\";
+export class Example extends React.Component {
+  static defaultProps = {
+    text: \\"Hello World!\\"
+  };
+
+  render() {
+    return React.createElement(\\"div\\", null, this.props.text);
+  }
+
+}"
+`;
