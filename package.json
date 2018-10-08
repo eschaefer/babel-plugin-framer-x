@@ -31,10 +31,13 @@
     "rimraf": "^2.6.2"
   },
   "keywords": [
+    "babel",
+    "plugin",
     "babel-plugin",
     "react",
     "framer",
     "framer x",
+    "storybook",
     "design system",
     "sketch"
   ]
