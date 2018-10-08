@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "clean": "rimraf lib",
-    "build": "mkdir ./lib && cp src/* ./lib/",
+    "build": "mkdir ./lib && babel src --out-dir lib",
     "test": "jest -u",
     "test:watch": "npm run test -- --watch",
     "prepublish": "npm run clean && npm run build",
@@ -20,8 +20,10 @@
   "devDependencies": {
     "@babel/cli": "^7.1.2",
     "@babel/core": "^7.1.2",
+    "@babel/plugin-syntax-class-properties": "^7.0.0",
     "@babel/plugin-syntax-flow": "^7.0.0",
     "@babel/plugin-syntax-typescript": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
     "babel-core": "^7.0.0-bridge",
     "babel-jest": "^23.6.0",
     "jest": "^23.6.0",
@@ -35,8 +37,5 @@
     "framer x",
     "design system",
     "sketch"
-  ],
-  "dependencies": {
-    "@babel/plugin-syntax-class-properties": "^7.0.0"
-  }
+  ]
 }
