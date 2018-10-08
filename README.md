@@ -1,8 +1,13 @@
 # `babel-plugin-framer-x`
 
-This plugin lets you directly use Framer X components in a larger React application. It removes two things that normally you need to do by-hand:
+## Who is this for?
 
-- All imported values from `framer`;
+- You have components built with Framer X, but want to publish a living styleguide with something like [Storybook](http://storybook.js.org/) or [Styleguidist](https://react-styleguidist.js.org/).
+- You want to use components built in Framer X directly in a React application.
+
+This plugin removes two things that normally you need to do by-hand:
+
+- All imported values from `framer`.
 - All `propertyControls` class properties.
 
 ```javascript
